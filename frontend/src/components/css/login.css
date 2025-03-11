@@ -1,0 +1,118 @@
+.loginMain {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding-inline: 5rem;
+  overflow: hidden;
+}
+
+.loginImgContainer {
+  height: 70rem;
+  width: 90rem;
+}
+
+.loginImgContainer img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.loginDiv {
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  max-width: 90%;
+  text-align: center;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.loginForm h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+}
+
+.loginForm input {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+  background: #f9f9f9;
+  font-weight: bolder;
+}
+
+input::placeholder {
+  letter-spacing: normal;
+}
+
+input[type="text"] {
+  letter-spacing: 0.2rem;
+}
+
+input[type="password"] {
+  letter-spacing: 0.5rem;
+}
+.loginForm input:focus {
+  border-color: #4facfe;
+  box-shadow: 0 0 8px rgba(79, 172, 254, 0.5);
+}
+
+.loginForm .link {
+    text-decoration: none;
+}
+
+.loginSubmit {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: white;
+  font-size: 16px;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.loginSubmit:hover {
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  transform: translateY(-2px);
+}
+
+.loginForm input::placeholder {
+  color: #aaa;
+}
+
+@media (max-width: 768px) {
+  .loginrDiv {
+    padding: 20px;
+  }
+
+  .loginForm input,
+  .loginSubmit {
+    font-size: 14px;
+  }
+
+  .loginImgContainer img {
+    display: none;
+  }
+}

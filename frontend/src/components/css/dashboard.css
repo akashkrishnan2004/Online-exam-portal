@@ -1,0 +1,193 @@
+@font-face {
+  font-family: "Pacifico";
+  src: url("../fonts/Pacifico/Pacifico-Regular.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dashboard h1 {
+  color: #343a40;
+  font-size: 4rem;
+}
+
+.dashboard p {
+  color: #6c757d;
+}
+
+.dashboardNavbar {
+  height: 4rem;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand a,
+.dashboardSpan {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-brand-span {
+  font-family: "Pacifico";
+  font-size: 1.2rem;
+  /* color: #6a5acd; */
+  color: #ffffff;
+}
+
+.dashboardLogo {
+  height: 4rem;
+  width: 10rem;
+  object-fit: contain;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+  color: #2e89c6;
+}
+
+.dashBoardBody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rem;
+}
+
+.dashBoardBody,
+.dashboardHead1 {
+  white-space: pre-line;
+  font-size: 30rem;
+}
+
+.examImg {
+  height: 40rem;
+  width: 40rem;
+  object-fit: cover;
+}
+
+.menu-button {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .dashboardNavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+  }
+
+  .dashboardLogo {
+    height: 3rem;
+    width: auto;
+  }
+
+  .menu-button {
+    display: block;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+
+  .menu-button:hover {
+    background-color: #00f2fe;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    position: absolute;
+    top: 4rem;
+    right: 1rem;
+    width: 12rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .navbar-links.menu-open {
+    display: flex;
+  }
+
+  .navbar-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  .navbar-links a:hover {
+    color: #2e89c6;
+    text-decoration: underline;
+  }
+
+  .dashBoardBody {
+    font-size: 2rem;
+    text-align: center;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .examImg {
+    height: 20rem;
+    width: 20rem;
+  }
+
+  .dashboard h1 {
+    color: #343a40;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboardLogo {
+    height: 2.5rem;
+  }
+
+  .menu-button {
+    font-size: 1.2rem;
+  }
+
+  .navbar-links a {
+    font-size: 0.9rem;
+  }
+
+  .dashBoardBody {
+    font-size: 1.5rem;
+  }
+
+  .examImg {
+    height: 15rem;
+    width: 15rem;
+  }
+
+  .dashboard h1 {
+    color: #343a40;
+    font-size: 2rem;
+  }
+}

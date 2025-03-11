@@ -1,0 +1,190 @@
+* {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.instructorDashboard h1 {
+  color: #343a40;
+  font-size: 2rem;
+}
+
+.dashboard p {
+  color: #6c757d;
+}
+
+.instructorDashboardNavbar {
+  height: 4rem;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.instructorDashboardNavbar-brand a,
+.instructorDashboardSpan {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.instructorDashboardNav {
+  list-style-type: none;
+}
+
+.instructorDashboardNav a {
+  text-decoration: none;
+  color: white;
+}
+
+.instructorDashboardButton {
+  height: 2rem;
+  width: 6rem;
+  border: 1px solid #2e89c6;
+  background-color: #2e89c6;
+  color: white;
+  border-radius: 0.5rem;
+}
+
+.instructorDashboardBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  background-image: url("./images/exam.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.instructorDashboardHead1 {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.instructorDashboardBodyButtons {
+  display: flex;
+  gap: 2rem;
+}
+
+.instructorDashboardButton2 {
+  height: 2.5rem;
+  width: 10rem;
+  border: none;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: white;
+  border-radius: 0.5rem;
+}
+
+.instructorDashboardImgDiv {
+  height: 25rem;
+  width: 25rem;
+}
+
+.instructorDashboardImgDiv img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .instructorDashboardNavbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    text-align: center;
+  }
+
+  .instructorDashboardSpan,
+  .instructorDashboardNav a {
+    font-size: 1rem;
+  }
+
+  .instructorDashboardNavbar-brand {
+    margin-bottom: 1rem;
+  }
+
+  .instructorDashboardNav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .instructorDashboardNav li {
+    display: block;
+  }
+
+  .instructorDashboardNav a {
+    font-size: 1rem;
+    color: white;
+  }
+
+  .instructorDashboardBody {
+    padding: 1rem;
+  }
+
+  .instructorDashboardHead1 {
+    font-size: 1.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .instructorDashboardBodyButtons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .instructorDashboardButton2 {
+    width: 8rem;
+    height: 2rem;
+    font-size: 0.9rem;
+  }
+
+  .instructorDashboardImgDiv {
+    height: 20rem;
+    width: 20rem;
+  }
+
+  .instructorDashboardImgDiv img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 480px) {
+  .instructorDashboardNavbar {
+    padding: 0.5rem;
+  }
+
+  .instructorDashboardNavbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar-links {
+    gap: 0.5rem;
+  }
+
+  .navbar-links a {
+    font-size: 0.9rem;
+  }
+
+  .instructorDashboardHead1 {
+    font-size: 1.2rem;
+    padding-top: 0.5rem;
+  }
+
+  .instructorDashboardBodyButtons {
+    gap: 0.5rem;
+  }
+
+  .instructorDashboardButton2 {
+    width: 7rem;
+    height: 1.8rem;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,59 @@
+.studentMarksPage {
+  padding: 20px;
+}
+
+.studentMarksPageNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.studentMarksPageTitle {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.studentMarksPageButton {
+  padding: 8px 16px;
+  background-color: #f44;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.studentMarksPageButton:hover {
+  background-color: #d33;
+}
+
+.examDetails {
+  margin-top: 20px;
+}
+
+.examTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.examTable th,
+.examTable td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+.examTable th {
+  background-color: #f9f9f9;
+}
+
+.totalMarks {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.examIcon,
+.marksIcon,
+.totalMarksIcon {
+  margin-right: 8px;
+}
