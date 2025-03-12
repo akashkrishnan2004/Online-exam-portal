@@ -3,7 +3,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import API_URL from "./api";
 
-import "./css/ShowExams.css";
+import "./css/showExams.css";
 
 const ShowExams = () => {
   const [exams, setExams] = useState([]);
