@@ -56,15 +56,25 @@ app.use(examRoutes);
 
 const PORT = process.env.PORT
 
-app.all("/*", (req, res) => res.sendFile(path.resolve("./dist/index.html")));
+// app.all("/*", (req, res) => res.sendFile(path.resolve("./dist/index.html")));
+// connect()
+//   .then(() => {
+//     app.listen(PORT, (error) => {
+//       if (error) return console.log(error);
+//       console.log(`Server started on port ${process.env.VITE_PORT}`);
+//       console.log("data base connected");
+//     });
+//   })
+//   .catch((e) => {
+//     console.log(e);
+//   });
+
 connect()
-  .then(() => {
-    app.listen(PORT, (error) => {
-      if (error) return console.log(error);
-      console.log(`Server started on port ${process.env.VITE_PORT}`);
-      console.log("data base connected");
-    });
-  })
-  .catch((e) => {
-    console.log(e);
-  });
+
+app.listen(PORT, (error) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log(`Server started on port ${PORT}`);
+  }
+});
