@@ -1,4 +1,6 @@
-const API_URL = 'http://localhost:5000/api';
+// const API_URL = "http://localhost:5000/api";
+
+const API_URL = "https://online-exam-portal-lxzv.onrender.com";
 
 export default API_URL;
 
