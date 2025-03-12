@@ -57,7 +57,7 @@ app.use(examRoutes);
 app.all("/*", (req, res) => res.sendFile(path.resolve("./dist/index.html")));
 connect()
   .then(() => {
-    app.listen(process.env.VITE_PORT, (error) => {
+    app.listen(process.env.PORT, (error) => {
       if (error) return console.log(error);
       console.log(`Server started on port ${process.env.VITE_PORT}`);
       console.log("data base connected");
