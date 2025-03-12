@@ -2,7 +2,7 @@ const API_URL = 'http://localhost:5000/api';
 
 export default API_URL;
 
-console.log("API URL:", API_URL);
+// console.log("API URL:", API_URL);
 
 export async function register(username, email, password) {
   const response = await fetch(`${API_URL}/register`, {
