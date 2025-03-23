@@ -29,6 +29,8 @@ router.route("/login").post(user.login);
 // router.route("/change-password").post(user.changePassword);
 router.route("/profile").get(auth, user.profile);
 
+router.route("/get-all").get(user.allUsers)
+
 router.post("/api/exam", createExam);
 router.get("/api/exam/titles", getExamTitles);
 router.get("/api/exam/:id", getExamQuestions);

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import examImg from "./images/exam-image.png";
-import logo4 from "./images/logo2-removebg-preview.png";
 
 import "./css/dashboard.css";
 
@@ -28,6 +27,9 @@ function Dashboard() {
         </button>
         {/* Links */}
         <ul className={`navbar-links ${menuOpen ? "menu-open" : ""}`}>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
           <li>
             <Link to="/register">Signup</Link>
           </li>

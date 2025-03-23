@@ -5,7 +5,8 @@ import "./css/studentDashboard.css";
 import student_dashboard from "./images/student_dashboard.png";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import API_URL from "./api";
+
+// import API_URL from "./api";
 
 export default function StudentDashboard() {
 

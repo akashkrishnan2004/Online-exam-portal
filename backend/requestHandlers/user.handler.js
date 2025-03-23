@@ -56,34 +56,63 @@ export async function register(req, res) {
   }
 }
 
-// Login
+// Login using email
 export async function login(req, res) {
   try {
-    const { username, password } = req.body;
+    const { email, password, username } = req.body;
 
     // Validate inputs
-    if (!username || username.length < 2 || !password || password.length < 4) {
+    if (!email || !password) {
       return res.status(400).json({ msg: "Invalid inputs" });
     }
 
     // Find user and validate password
-    const user = await userModel.findOne({ username });
+    const user = await userModel.findOne({ email });
     if (!user || !(await bcrypt.compare(password, user.password))) {
       return res.status(401).json({ msg: "Invalid credentials" });
     }
 
     // Generate JWT
     const token = sign(
-      { userId: user._id, username: user.username, role: user.role },
+      { userId: user._id, email: user.email, role: user.role },
       process.env.JWT_SECRET,
       { expiresIn: "24h" }
     );
-    return res.status(200).json({ token });
+    return res.status(200).json({ user, token });
   } catch (error) {
     console.error(error);
     return res.status(500).json({ msg: "Failed to login" });
   }
 }
+
+// Login using username
+// export async function login(req, res) {
+//   try {
+//     const { username, password } = req.body;
+
+//     // Validate inputs
+//     if (!username || username.length < 2 || !password || password.length < 4) {
+//       return res.status(400).json({ msg: "Invalid inputs" });
+//     }
+
+//     // Find user and validate password
+//     const user = await userModel.findOne({ username });
+//     if (!user || !(await bcrypt.compare(password, user.password))) {
+//       return res.status(401).json({ msg: "Invalid credentials" });
+//     }
+
+//     // Generate JWT
+//     const token = sign(
+//       { userId: user._id, username: user.username, role: user.role },
+//       process.env.JWT_SECRET,
+//       { expiresIn: "24h" }
+//     );
+//     return res.status(200).json({ token });
+//   } catch (error) {
+//     console.error(error);
+//     return res.status(500).json({ msg: "Failed to login" });
+//   }
+// }
 
 // Request Password Reset
 // export async function requestPasswordReset(req, res) {
@@ -159,3 +188,12 @@ export async function profile(req, res) {
   }
 }
 
+export async function allUsers(req, res) {
+  try {
+    let data = await userModel.find();
+    return res.status(200).json(data);
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ msg: "Failed to fetch" });
+  }
+}

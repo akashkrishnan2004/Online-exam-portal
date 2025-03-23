@@ -20,6 +20,7 @@ import InstructorDashboard from "./components/instructorDashboard";
 import AddExam from "./components/addExam";
 import ShowExams from "./components/showExams";
 import InstructorProfile from "./components/instructorProfile";
+import About from "./components/about";
 
 if (import.meta.env.DEV) {
   axios.defaults.baseURL = `http://localhost:${import.meta.env.VITE_PORT}`;
@@ -33,6 +34,7 @@ function AppRoute() {
       <Toaster />
       <Routes>
         <Route path="/" element={<Dashboard />} />
+        <Route path="/about" element={<About/>} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
 

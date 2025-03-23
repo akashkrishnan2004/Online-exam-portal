@@ -2,46 +2,43 @@ import { useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate, Link } from "react-router-dom";
-import { profile } from "./utils/helpers";
 import exam2 from "./images/exam2.png";
+
 import API_URL from "./api";
 
 import "./css/login.css";
 
 export default function Login() {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (username.length < 2 || password.length < 4) {
+    if (email.length < 5 || password.length < 4) {
       toast.error("Invalid inputs. Please check your details.");
       return;
     }
 
     try {
-      const response = await axios.post(`${API_URL}/login`, { username, password });
+      const response = await axios.post(`${API_URL}/login`, {
+        email,
+        password,
+      });
 
-      localStorage.setItem("token", response.data.token);
+      const { user, token } = response.data;
+
+      localStorage.setItem("token", token);
       toast.success("Login successful");
 
-      const userData = await profile();
-      if (!userData) {
-        toast.error("Failed to retrieve user data");
-        return;
-      }
-
-      const { _id, username: name, role } = userData;
+      const { _id, email: userEmail, role, username } = user;
 
       localStorage.setItem("Role", role);
       localStorage.setItem("User_ID", _id);
-      localStorage.setItem("User_Name", name);
-      localStorage.setItem(
-        "User",
-        JSON.stringify({ id: _id, name })
-      );
+      localStorage.setItem("User_Name", username);
+      localStorage.setItem("User_Email", userEmail);
+      localStorage.setItem("User", JSON.stringify({ id: _id, username }));
 
       if (role === "student") {
         navigate("/student-dashboard");
@@ -63,11 +60,11 @@ export default function Login() {
           <form onSubmit={handleSubmit} className="loginForm">
             <h2 className="loginHead2">Login</h2>
             <input
-              type="text"
-              placeholder="Username"
+              type="email"
+              placeholder="Email"
               className="loginUsername"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
             <input
@@ -78,7 +75,12 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            <span>Don't have an account? <Link to="/register" className="link">Register</Link></span>
+            <span>
+              Don't have an account?{" "}
+              <Link to="/register" className="link">
+                Register
+              </Link>
+            </span>
             <button type="submit" className="loginSubmit">
               Login
             </button>

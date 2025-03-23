@@ -12,11 +12,7 @@ export default function InstructorProfile() {
   const navigate = useNavigate();
 
   const logout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("Role");
-    localStorage.removeItem("User_ID");
-    localStorage.removeItem("User_Name");
-    localStorage.removeItem("User");
+    localStorage.clear();
     navigate("/", { replace: true });
     window.location.reload();
   };

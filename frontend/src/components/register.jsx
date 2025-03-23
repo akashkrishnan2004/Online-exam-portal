@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import toBase64 from "./utils/converters.js";
 import avatar from "./images/Avatar.png";
 import exam from "./images/exam.png";
+
 import API_URL from "./api.jsx";
 
 import "./css/register.css";
@@ -16,6 +17,8 @@ function Register() {
   const [role, setRole] = useState("student");
   const [image, setImage] = useState(null);
   const navigate = useNavigate();
+
+  // const API_URL = import.meta.env.VITE_BACKEND_URL;
 
   const imageChanger = async (e) => {
     let file = e.target.files[0];

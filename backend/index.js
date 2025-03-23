@@ -14,13 +14,15 @@ import { authenticateToken } from "./middleware/auth.js";
 
 dotenv.config();
 const app = express();
-// app.use(cors());
+app.use(cors());
+
 // Allow your frontend domain
-app.use(cors({
-  origin: 'https://online-exam-portal-frontend.onrender.com',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true
-}));
+// app.use(cors({
+//   origin: 'https://online-exam-portal-frontend.onrender.com',
+//   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//   credentials: true
+// }));
+
 app.use(express.static("./dist"));
 app.use(express.json({ limit: "5mb" }));
 

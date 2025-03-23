@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { FaUser, FaEnvelope, FaUserTie } from "react-icons/fa";
 import axios from "axios";
+
 import API_URL from "./api";
 
 import "./css/studentProfile.css";
@@ -97,7 +98,6 @@ export default function StudentProfile() {
         <h3>Exam Results</h3>
         {marks && marks.exams && marks.exams.length > 0 ? (
           <>
-            <p className="totalMarks">Total Marks: {marks.totalMarks}</p>
             <table className="examTable">
               <thead>
                 <tr>
@@ -114,6 +114,7 @@ export default function StudentProfile() {
                 ))}
               </tbody>
             </table>
+            <p className="totalMarks">Total Mark: {marks.totalMarks}</p>
           </>
         ) : (
           <p>No exams attended yet.</p>
